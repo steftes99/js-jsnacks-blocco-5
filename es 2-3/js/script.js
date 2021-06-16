@@ -53,6 +53,11 @@ var zucchine = [
 
 var pesoTotale = 0;
 
+var min15 = [];
+var mag15 = [];
+
+pesoMin15 = 0;
+pesoMag15 = 0;
 
 for(i = 0; i < zucchine.length; i++){
     pesoTotale += zucchine[i].peso;
@@ -62,3 +67,25 @@ console.log(pesoTotale + ' ' +'g');
 var pesoInKg = pesoTotale / 1000;
 
 console.log(pesoInKg + ' ' + 'kg');
+
+for(var i = 0; i < zucchine.length; i++){
+    if(zucchine[i].lunghezza < 15){
+        min15.push(zucchine[i])
+    } else{
+        mag15.push(zucchine[i])
+    }
+}
+
+
+for(i = 0; i < min15.length; i++){
+    pesoMin15 += min15[i].peso;
+}
+for(i = 0; i < mag15.length; i++){
+    pesoMag15 += mag15[i].peso;
+}
+
+console.log(min15);
+console.log(mag15);
+
+console.log(pesoMin15 + ' ' + 'g');
+console.log(pesoMag15 + ' ' + 'g');
